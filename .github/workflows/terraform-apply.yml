@@ -15,7 +15,7 @@ env:
 jobs:
   terraform:
 # Add a comment 
-    if: github.repository == 'hashicorp-education/learn-terraform-github-actions'
+    if: github.repository == 'CursoScripting/learn-terraform-github-actions'
     name: "Terraform Apply"
     runs-on: ubuntu-latest
     permissions:
