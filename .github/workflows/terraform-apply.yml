@@ -50,8 +50,7 @@ jobs:
         uses: jbergknoff/github-action-wait-for-terraform-plan-approval@v1
         with:
           command: wait
-          run: ${{ steps.apply-run.outputs.run_id }}
-##          plan_id: ${{steps.submit_plan.outputs.plan_id}}
+          plan_id: ${{ steps.apply-run.outputs.run_id }}
           timeout_seconds: 120
 
       - name: Destroy
