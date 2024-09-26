@@ -10,6 +10,7 @@ env:
   CONFIG_DIRECTORY: "./"
 
 jobs:
+  ## Comment in a Pipeline
   terraform:
     if: github.repository == 'hashicorp-education/learn-terraform-github-actions'
     name: "Terraform Plan"
