@@ -12,7 +12,7 @@ env:
 jobs:
   ## Comment in a Pipeline
   terraform:
-    if: github.repository == 'hashicorp-education/learn-terraform-github-actions'
+    if: github.repository == 'CursoScripting/learn-terraform-github-actions'
     name: "Terraform Plan"
     runs-on: ubuntu-latest
     permissions:
