@@ -46,6 +46,14 @@ jobs:
           run: ${{ steps.apply-run.outputs.run_id }}
           comment: "Apply Run from GitHub Actions CI ${{ github.sha }}"
 
+      - name: Wait for approval
+        uses: jbergknoff/github-action-wait-for-terraform-plan-approval@v1
+        with:
+          command: wait
+          run: ${{ steps.apply-run.outputs.run_id }}
+##          plan_id: ${{steps.submit_plan.outputs.plan_id}}
+          timeout_seconds: 120
+
       - name: Destroy
         uses: dflook/terraform-destroy@v1
         with:
