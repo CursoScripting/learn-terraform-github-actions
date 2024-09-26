@@ -8,12 +8,13 @@ on:
 env:
   TF_CLOUD_ORGANIZATION: "FarmaciaZaragoza"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "learn-terraform-github-actions"
+  TF_WORKSPACE: "brqx-workspace-terraform"
   CONFIG_DIRECTORY: "./"
 
 jobs:
   terraform:
-    if: github.repository != 'hashicorp-education/learn-terraform-github-actions'
+# Add a comment 
+    if: github.repository == 'hashicorp-education/learn-terraform-github-actions'
     name: "Terraform Apply"
     runs-on: ubuntu-latest
     permissions:
@@ -43,3 +44,9 @@ jobs:
         with:
           run: ${{ steps.apply-run.outputs.run_id }}
           comment: "Apply Run from GitHub Actions CI ${{ github.sha }}"
+
+      - name: Destroy
+        uses: dflook/terraform-destroy@v1
+        with:
+          run: ${{ steps.apply-run.outputs.run_id }}
+          comment: "Destroy CI ${{ github.sha }}"
