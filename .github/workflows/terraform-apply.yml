@@ -46,6 +46,7 @@ jobs:
           run: ${{ steps.apply-run.outputs.run_id }}
           comment: "Apply Run from GitHub Actions CI ${{ github.sha }}"
 
+      ## Works perfectly
       - name: Sleep for 120 seconds
         uses: jakejarvis/wait-action@master
         with:
@@ -54,5 +55,6 @@ jobs:
       - name: Destroy
         uses: dflook/terraform-destroy@v1
         with:
-          run: ${{ steps.apply-run.outputs.run_id }}
+          workspace: ${{ env.TF_WORKSPACE }}
+          path: ${{ env.CONFIG_DIRECTORY }}
           comment: "Destroy CI ${{ github.sha }}"
