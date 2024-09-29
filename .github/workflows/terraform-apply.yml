@@ -12,6 +12,7 @@ env:
   CONFIG_DIRECTORY: "./"
 
 ## Comment in a Pipeline
+# BRQX - The Most Simple Pipeline in 2024
 jobs:
   terraform:
 # Add a comment 
@@ -52,9 +53,4 @@ jobs:
         with:
           time: '120s'
 
-      - name: Destroy
-        uses: dflook/terraform-destroy@v1
-        with:
-          workspace: ${{ env.TF_WORKSPACE }}
-          path: ${{ env.CONFIG_DIRECTORY }}
-          comment: "Destroy CI ${{ github.sha }}"
+      ## Auto Destroy - Pending

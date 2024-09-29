@@ -11,6 +11,7 @@ env:
 
 jobs:
   ## Comment in a Pipeline
+  # BRQX - The Most Simple Pipeline in 2024
   terraform:
     if: github.repository == 'CursoScripting/learn-terraform-github-actions'
     name: "Terraform Plan"
