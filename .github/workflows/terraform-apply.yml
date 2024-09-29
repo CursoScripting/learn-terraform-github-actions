@@ -52,9 +52,4 @@ jobs:
         with:
           time: '120s'
 
-      - name: Destroy
-        uses: dflook/terraform-destroy@v1
-        with:
-          workspace: ${{ env.TF_WORKSPACE }}
-          path: ${{ env.CONFIG_DIRECTORY }}
-          comment: "Destroy CI ${{ github.sha }}"
+      ## Auto Destroy - Pending
