@@ -12,6 +12,7 @@ env:
   CONFIG_DIRECTORY: "./"
 
 ## Comment in a Pipeline
+# BRQX - The Most Simple Pipeline in 2024
 jobs:
   terraform:
 # Add a comment 

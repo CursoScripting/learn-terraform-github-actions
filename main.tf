@@ -1,5 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
+# BRQX - The Most Simple Pipeline in 2024
 
 terraform {
   required_providers {
